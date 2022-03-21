@@ -61,3 +61,32 @@ module.exports = {
 如上配置以后，便可在<b>./src/index.js</b>中直接使用import将css温江像导入js文件一样导入，最终css文件将体现在打包后的网页的&lt;**style**&gt;标签中。(head--style)
 
 ## 在webpack中打包image文件
+
+万物皆可**import**,图片亦是如此，使用**file-loader**可以将图片资源混合其中。
+
+首先需要引入**file-loader**库，
+```bash
+npm i file-loader -S
+```
+
+然后在**webpack.config.js**中引入打包图片的相关规则
+
+```javascript
+// webpack.config.js
+...
+module.exports = {
+    ...
+    module:{
+        rules:[
+            ...
+            {
+                test:/\.(png|jpg|gif|svg|webp)$/,  // 引入file-loader打包规则，使其对图片资源进行打包。
+                use:[
+                    "file-loader"
+                ]
+            }
+        ]
+    }
+}
+
+```
