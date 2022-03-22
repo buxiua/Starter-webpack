@@ -120,3 +120,6 @@ module.exports = {
 }
 
 ```
+
+
+在webpack中，还可以打包json，xml，csv，字体等文件，但都需要下载相应的$\color{blue}{loader}$
