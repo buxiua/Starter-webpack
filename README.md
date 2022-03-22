@@ -62,6 +62,15 @@ module.exports = {
 
 ## 在webpack中打包image文件
 
+webpack4,css-loader@5.2.4 style-loader@2.0.0
+过高版本的css-loader或者style-loader会报错
+```bash
+ERROR in ./src/index.css
+Module build failed (from ./node_modules/style-loader/dist/cjs.js):
+TypeError: this.getOptions is not a function
+    at Object.loader (C:\Users\17947\Desktop\webpackLearn\node_modules\style-loader\dist\index.js:19:24)
+```
+
 万物皆可**import**,图片亦是如此，使用**file-loader**可以将图片资源混合其中。
 
 首先需要引入**file-loader**库，
@@ -84,6 +93,27 @@ module.exports = {
                 use:[
                     "file-loader"
                 ]
+            }
+        ]
+    }
+}
+
+```
+
+在webpack5中，其内置**Asset Modules**，使用其可以将图片轻松打包进入其中。
+```javascript
+// webpack.config.js 
+
+const path = require("path")
+
+module.exports = {
+    ...
+    module:{
+        rules:[
+            ...
+            {
+                test:/\.(png|jpg|gif|svg|webp)$/i,
+                type:"asset/resource", // 使用内置的Asset Modules模块
             }
         ]
     }

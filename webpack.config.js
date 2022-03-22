@@ -16,10 +16,8 @@ module.exports = {
                 ]
             },
             {
-                test:/\.(png|jpg|gif|svg|webp)$/,
-                use:[
-                    "file-loader"
-                ]
+                test:/\.(png|jpg|gif|svg|webp)$/i,
+                type:"asset/resource",
             }
         ]
     }
