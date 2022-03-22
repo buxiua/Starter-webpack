@@ -19,7 +19,7 @@ module.exports = {
 
 ```
 
-$\color{red}{tips}$ : **path.resolve**函数将一个路径或路径片段的序列解析为一个绝对路径。
+***tips*** : **path.resolve**函数将一个路径或路径片段的序列解析为一个绝对路径。
 
 为了避免每次使用npx webpack命令进行打包编译代码，可以使用npm scripts来进行打包。在**package.json中**的scripts添加相应的命令
 ```json
@@ -122,4 +122,4 @@ module.exports = {
 ```
 
 
-在webpack中，还可以打包json，xml，csv，字体等文件，但都需要下载相应的$\color{blue}{loader}$
+在webpack中，还可以打包json，xml，csv，字体等文件，但都需要下载相应的**loader**
