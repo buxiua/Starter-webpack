@@ -60,7 +60,16 @@ module.exports = {
 
 如上配置以后，便可在<b>./src/index.js</b>中直接使用import将css温江像导入js文件一样导入，最终css文件将体现在打包后的网页的&lt;**style**&gt;标签中。(head--style)
 
-## 在webpack中打包image文件（webpack4）
+## 在webpack中打包image文件
+
+webpack4,css-loader@5.2.4 style-loader@2.0.0
+过高版本的css-loader或者style-loader会报错
+```bash
+ERROR in ./src/index.css
+Module build failed (from ./node_modules/style-loader/dist/cjs.js):
+TypeError: this.getOptions is not a function
+    at Object.loader (C:\Users\17947\Desktop\webpackLearn\node_modules\style-loader\dist\index.js:19:24)
+```
 
 万物皆可**import**,图片亦是如此，使用**file-loader**可以将图片资源混合其中。
 
